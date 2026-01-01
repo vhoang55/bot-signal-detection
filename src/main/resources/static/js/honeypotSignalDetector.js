@@ -1,7 +1,7 @@
 (function (global) {
 
   const HONEYPOT_FIELD_FILLED   = 'HONEYPOT_FIELD_FILLED';
-  const mv = 'FORM_SUBMITTED_TOO_FAST';
+  const FORM_SUBMITTED_TOO_FAST = 'FORM_SUBMITTED_TOO_FAST';
   const NO_HUMAN_INTERACTION    = 'NO_HUMAN_INTERACTION';
 
   class HoneypotDetector {
@@ -92,15 +92,11 @@
 
       fetch(this.config.reportUrl, {
         method: 'POST',
-        //keepalive: true,
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
     }
   }
-
-  //global.mydomain.HoneypotDetector = HoneypotDetector;
-
   global.vhoang = window.vhoang || {};
   global.vhoang.HoneypotDetector = HoneypotDetector;
 

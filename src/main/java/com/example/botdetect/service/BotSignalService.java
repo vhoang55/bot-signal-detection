@@ -25,9 +25,6 @@ public class BotSignalService {
         return computedHash.equalsIgnoreCase(reportMetric.getIntegrityHash());
     }
 
-
-
-    // 🔐 MUST MATCH CLIENT EXACTLY
     private String canonicalString(HoneypotReportMetric r) throws Exception {
         return String.join("|",
                 String.valueOf(r.getTimestamp()),

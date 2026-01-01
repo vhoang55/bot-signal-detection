@@ -24,14 +24,6 @@ public class HoneypotDetectionReportController {
         this.botSignalService = botSignalService;
     }
 
-
-//    @PostMapping("/honeypot/report")
-//    public ResponseEntity<?> receiveReport(@RequestBody HoneypotReport report) {
-//        // Log, store, alert, or forward to SIEM
-//        System.out.println("Suspicious activity detected: " + report);
-//        return ResponseEntity.ok().build();
-//    }
-
     @PostMapping("/honeypot/report")
     public ResponseEntity<String> receive(@RequestBody HoneypotReportMetric report) throws Exception {
 
