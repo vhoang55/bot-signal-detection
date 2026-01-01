@@ -79,7 +79,7 @@ button[type="submit"]:active{ transform:translateY(0); }
 
 /* Honeypot fields: keep them hidden from users but present for bots */
 
-/*
+
 input[data-honeypot]{
   position:absolute !important;
   left:-9999px !important;
@@ -90,7 +90,7 @@ input[data-honeypot]{
   opacity:0 !important;
   pointer-events:none !important;
 }
-*/
+
 
 
 
