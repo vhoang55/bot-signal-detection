@@ -6,6 +6,8 @@ To run the application, use the following Maven command:
 
 ```bash
 mvn spring-boot:run
+
+or just import the maven project into your favorite IDE and run the main application class `com.example.botsignaldetection.BotSignalDetectionApplication`
 ```
 
 navigate to `http://localhost:8080` to access the application.
