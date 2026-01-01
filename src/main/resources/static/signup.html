@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up page</title>
+    <link rel="stylesheet" href="/css/signup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<form id="registrationForm" action="/register" method="post">
+
+
+    <input type="text" name="firstName" placeholder="First name" required> <br>
+    <input type="text" name="lastName" placeholder="Last name" required><br>
+    <textarea name="message" placeholder="Message"></textarea><br>
+
+    <!-- Honeypot fields -->
+    <input
+            type="text"
+            name="company_fax"
+            data-honeypot
+            tabindex="-1"
+            autocomplete="off"
+    >
+
+    <input
+            type="text"
+            name="address_line_3"
+            data-honeypot
+            tabindex="-1"
+            autocomplete="off"
+    >
+           <!-- style="display:none" -->
+
+    <button type="submit">Submit</button>
+</form>
+
+<!--<script src="/js/honeypotSignalDetector.js"></script>-->
+<script src="/js/minifydetector.js"></script>
+
+<script>
+    const detector = new vhoang.HoneypotDetector({
+      reportUrl: 'http://localhost:8080/api/honeypot/report'
+    });
+
+    document
+      .getElementById('registrationForm')
+      .addEventListener('submit', (event) => {
+        const result = detector.analyzeForm(event.target);
+        detector.report(result);
+      });
+</script>
+
+</body>
+</html>
